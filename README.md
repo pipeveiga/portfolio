@@ -1,4 +1,4 @@
-# Pipe Veiga | Portfolio
+# Felipe Veiga | Portfolio
 
 Portfolio personal estatico, listo para publicar con GitHub Pages.
 
