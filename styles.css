@@ -311,130 +311,39 @@ h1 span {
 }
 
 .project-screen {
-  align-items: center;
   aspect-ratio: 16 / 10;
-  background:
-    radial-gradient(120% 100% at 20% 0%, rgba(255, 122, 89, 0.32), transparent 55%),
-    radial-gradient(140% 120% at 100% 100%, rgba(255, 196, 130, 0.28), transparent 60%),
-    linear-gradient(160deg, #fff7f2 0%, #ffe7d8 55%, #ffd9c2 100%);
-  border: 1px solid rgba(255, 255, 255, 0.85);
+  background: #f4f4f6;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: block;
   overflow: hidden;
-  padding: 56px 36px 36px;
   position: sticky;
-  text-align: center;
   top: 92px;
   transform: scale(0.985);
   transition:
-    box-shadow 280ms ease,
-    transform 280ms ease;
-}
-
-.project-screen.alt {
-  background:
-    radial-gradient(120% 100% at 10% 0%, rgba(80, 110, 220, 0.28), transparent 55%),
-    radial-gradient(140% 120% at 100% 100%, rgba(120, 170, 255, 0.28), transparent 60%),
-    linear-gradient(160deg, #f3f6ff 0%, #e0e8ff 55%, #cdd9ff 100%);
-}
-
-.project-screen.warm {
-  background:
-    radial-gradient(120% 100% at 10% 0%, rgba(244, 132, 70, 0.34), transparent 55%),
-    radial-gradient(140% 120% at 100% 100%, rgba(96, 80, 220, 0.36), transparent 60%),
-    linear-gradient(135deg, #ffb37a 0%, #f37b48 35%, #6457d8 100%);
-  color: #fff;
-}
-
-.project-screen.warm .screen-label,
-.project-screen.warm .screen-tag {
-  color: #fff;
-}
-
-.project-screen.warm .window-chrome {
-  background: rgba(0, 0, 0, 0.22);
-  border-color: rgba(255, 255, 255, 0.32);
-}
-
-.project-screen.warm .window-url {
-  color: rgba(255, 255, 255, 0.92);
-}
-
-.project-screen.warm .dot {
-  background: rgba(255, 255, 255, 0.55);
+    box-shadow 320ms ease,
+    transform 320ms ease;
 }
 
 .project-screen:hover {
   box-shadow:
-    0 40px 120px rgba(15, 15, 20, 0.18),
-    0 10px 28px rgba(15, 15, 20, 0.08);
-  transform: scale(1);
+    0 44px 130px rgba(15, 15, 20, 0.2),
+    0 12px 30px rgba(15, 15, 20, 0.08);
+  transform: scale(1.01);
 }
 
-.window-chrome {
-  align-items: center;
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 999px;
-  display: inline-flex;
-  gap: 6px;
-  left: 50%;
-  padding: 8px 14px 8px 10px;
-  position: absolute;
-  top: 22px;
-  transform: translateX(-50%);
+.screen-image {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
 }
 
-.window-chrome .dot {
-  background: rgba(0, 0, 0, 0.18);
-  border-radius: 999px;
-  height: 9px;
-  width: 9px;
-}
-
-.window-chrome .dot:nth-child(1) {
-  background: #ff6058;
-}
-
-.window-chrome .dot:nth-child(2) {
-  background: #ffbd2e;
-}
-
-.window-chrome .dot:nth-child(3) {
-  background: #28c941;
-}
-
-.window-url {
-  color: rgba(0, 0, 0, 0.58);
-  font-size: 0.78rem;
-  font-weight: 600;
-  margin-left: 10px;
-}
-
-.screen-label {
-  color: rgba(0, 0, 0, 0.62);
-  font-size: clamp(2.6rem, 8vw, 6.4rem);
-  font-weight: 800;
-  letter-spacing: -0.06em;
-  line-height: 0.92;
-}
-
-.screen-label em {
-  font-style: normal;
-  font-weight: 500;
-  opacity: 0.55;
-}
-
-.screen-tag {
-  color: rgba(0, 0, 0, 0.5);
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  margin-top: 16px;
-  text-transform: uppercase;
+.project-screen:hover .screen-image {
+  transform: scale(1.03);
 }
 
 .project-kicker {
