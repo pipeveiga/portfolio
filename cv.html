@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CV | Felipe Veiga</title>
-    <meta name="description" content="CV de Felipe Veiga." />
+    <meta name="description" content="CV de Felipe Veiga, Full-Stack Software Engineer." />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="cv-page">
@@ -13,59 +13,94 @@
         <div>
           <a class="cv-back" href="index.html">Portfolio</a>
           <h1>Felipe Veiga</h1>
-          <p>Frontend & producto digital</p>
+          <p>Ingeniero de Software Full-Stack</p>
+          <p class="cv-meta">Rosario, Argentina · Disponible remoto · Ingles B2</p>
+          <p class="cv-meta">fv.felipeveiga@gmail.com · +54 9 341 637 1115</p>
         </div>
-        <button class="button primary print-button" type="button" onclick="window.print()">Guardar PDF</button>
+        <div class="cv-downloads">
+          <a class="button primary" href="assets/felipe-veiga-cv-es.pdf" download>Descargar ES</a>
+          <a class="button secondary" href="assets/felipe-veiga-cv-en.pdf" download>Download EN</a>
+          <button class="button secondary print-button" type="button" onclick="window.print()">Guardar PDF</button>
+        </div>
       </header>
 
       <section class="cv-section">
         <h2>Perfil</h2>
         <p>
-          Desarrollo productos digitales con foco en interfaces claras, ejecucion rapida y experiencias que se entienden sin explicaciones. Trabajo bien entre producto, dise&ntilde;o y codigo.
+          Desarrollo software de produccion de punta a punta: arquitectura, diseño de base de datos, deploy, seguridad y documentacion. Lance una app de carpooling multiplataforma para eventos masivos, un SaaS de facturacion multi-moneda para Mexico y herramientas internas que reemplazaron flujos en papel en un negocio real.
         </p>
+      </section>
+
+      <section class="cv-section">
+        <h2>Proyectos destacados</h2>
+        <div class="cv-project">
+          <strong>hinch.ar</strong>
+          <p>React Native, Expo SDK 54, Supabase, Edge Functions, EAS Build. App iOS, Android y Web con chat realtime, push notifications, verificacion de identidad, reservas y rating.</p>
+        </div>
+        <div class="cv-project">
+          <strong>Billify</strong>
+          <p>Next.js 14, Supabase, Stripe, PayPal, Facturapi. SaaS de facturacion para Mexico con multi-moneda, PDFs, pagina publica de pago, auditoria de seguridad, JWT Bearer auth y deploy automatico en Vercel.</p>
+        </div>
+        <div class="cv-project">
+          <strong>TiendaNube Automation</strong>
+          <p>Python, REST APIs, JSON/CSV. Automatizaciones de inventario, catalogo y operaciones bulk multi-tienda con paginacion, rate limits y recuperacion de errores.</p>
+        </div>
+        <div class="cv-project">
+          <strong>Queyras Orders</strong>
+          <p>React, JavaScript, generacion de PDF. PWA mobile-first para reemplazar pedidos en papel con input estilo calculadora, grillas de talles, busqueda de articulos y exportacion al formato oficial.</p>
+        </div>
       </section>
 
       <section class="cv-grid">
         <article class="cv-section">
-          <h2>Fortalezas</h2>
+          <h2>Stack tecnico</h2>
           <ul>
-            <li>Frontend responsive y UI cuidada.</li>
-            <li>MVPs y prototipos listos para validar.</li>
-            <li>Mejoras de experiencia, performance y estructura.</li>
-            <li>Comunicacion clara y criterio de producto.</li>
+            <li>TypeScript, JavaScript, Python, SQL, HTML/CSS.</li>
+            <li>React, React Native, Next.js 14, Expo SDK 54, Zustand, Tailwind.</li>
+            <li>Supabase: PostgreSQL, Auth, Realtime, Edge Functions, Storage.</li>
+            <li>Stripe, PayPal Billing, Facturapi, Resend, FCM/APNs, GA4, Google Ads.</li>
+            <li>Git, GitHub Actions, Vercel, EAS Build, DNS.</li>
           </ul>
         </article>
         <article class="cv-section">
-          <h2>Stack</h2>
+          <h2>Practicas</h2>
           <ul>
-            <li>HTML, CSS, JavaScript.</li>
-            <li>React y ecosistemas web modernos.</li>
-            <li>Git, GitHub y despliegues web.</li>
-            <li>Dise&ntilde;o responsive y accesibilidad base.</li>
+            <li>Auditorias de seguridad.</li>
+            <li>Code review y documentacion tecnica.</li>
+            <li>TDD en flujos criticos.</li>
+            <li>Validacion de ownership y JWT auth.</li>
+            <li>Deploys y operacion de productos reales.</li>
           </ul>
         </article>
       </section>
 
       <section class="cv-section">
-        <h2>Proyectos</h2>
+        <h2>Experiencia</h2>
         <div class="cv-project">
-          <strong>Billify</strong>
-          <p>SaaS para facturacion y gestion operativa.</p>
+          <strong>Queyras</strong>
+          <p>Desarrollador Full-Stack, herramientas internas y e-commerce · Jun 2023 - Presente. Construyo y mantengo herramientas internas en Python y JavaScript para automatizar catalogo, inventario y pedidos.</p>
         </div>
         <div class="cv-project">
-          <strong>Hinch.ar</strong>
-          <p>Producto web para futbol, comunidad y contenido.</p>
+          <strong>PlusCargo USA</strong>
+          <p>Sales Development Representative · 2023. Prospeccion B2B y generacion de leads para el mercado logistico de EE.UU., enteramente en ingles.</p>
         </div>
         <div class="cv-project">
-          <strong>ABA</strong>
-          <p>Sitio web para una propuesta gastronomica.</p>
+          <strong>Al Volo</strong>
+          <p>Encargado / Atencion al cliente · 2019 - 2023. Liderazgo de equipo de 5+ personas, operaciones diarias, resolucion de conflictos y capacitacion.</p>
         </div>
       </section>
 
-      <section class="cv-section">
-        <h2>Contacto</h2>
-        <p>Email: hola@pipeveiga.dev</p>
-        <p>GitHub: github.com/pipeveiga</p>
+      <section class="cv-grid">
+        <article class="cv-section">
+          <h2>Educacion</h2>
+          <p>Universidad Austral · Tecnicatura en Programacion · 2023 - Presente.</p>
+          <p>Colegio Los Arroyos · Secundario, Economia · 2014 - 2018.</p>
+        </article>
+        <article class="cv-section">
+          <h2>Idiomas</h2>
+          <p>Español nativo.</p>
+          <p>Ingles B2.</p>
+        </article>
       </section>
     </main>
     <script src="script.js"></script>

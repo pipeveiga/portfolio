@@ -8,6 +8,8 @@ Portfolio personal estatico, listo para publicar con GitHub Pages.
 - `cv.html`: CV web imprimible o guardable como PDF desde el navegador.
 - `styles.css`: diseño responsive.
 - `script.js`: interacciones pequenas.
+- `assets/felipe-veiga-cv-es.pdf`: CV oficial en español.
+- `assets/felipe-veiga-cv-en.pdf`: CV oficial en ingles.
 
 ## Capturas de proyectos
 

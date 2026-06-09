@@ -421,6 +421,18 @@ h1 span {
   font-size: 1.25rem;
 }
 
+.cv-meta {
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.cv-downloads {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 170px;
+}
+
 .cv-section {
   border-bottom: 1px solid var(--line);
   padding: 28px 0;
@@ -572,6 +584,10 @@ h1 span {
   .footer {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .cv-downloads {
+    width: 100%;
   }
 
   .cv-project {
