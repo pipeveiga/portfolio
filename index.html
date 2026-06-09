@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pipe Veiga | Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio de Pipe Veiga: desarrollo de productos digitales, interfaces web y experiencias utiles."
+    />
+    <meta property="og:title" content="Pipe Veiga | Portfolio" />
+    <meta
+      property="og:description"
+      content="Desarrollo productos digitales con foco en claridad, velocidad y experiencia de usuario."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/hero.png" />
+    <link rel="preload" href="assets/hero.png" as="image" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-elevated="false">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <span class="brand-mark">PV</span>
+        <span>Pipe Veiga</span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a href="#proyectos">Proyectos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <img class="hero-media" src="assets/hero.png" alt="" />
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Producto digital, web y estrategia</p>
+          <h1 id="hero-title">Pipe Veiga</h1>
+          <p class="hero-copy">
+            Construyo productos digitales claros, veloces y faciles de usar: desde primeras versiones hasta experiencias listas para crecer.
+          </p>
+          <div class="hero-actions" aria-label="Acciones principales">
+            <a class="button primary" href="#proyectos">Ver proyectos</a>
+            <a class="button secondary" href="mailto:hola@pipeveiga.dev">Hablemos</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro" aria-label="Resumen">
+        <div class="intro-copy">
+          <p>
+            Me gusta transformar ideas en herramientas concretas: interfaces prolijas, flujos simples y decisiones tecnicas que ayudan al negocio a moverse mas rapido.
+          </p>
+        </div>
+        <dl class="metrics" aria-label="Puntos destacados">
+          <div>
+            <dt>Frontend</dt>
+            <dd>Interfaces modernas y responsivas</dd>
+          </div>
+          <div>
+            <dt>Producto</dt>
+            <dd>MVPs, iteracion y foco en uso real</dd>
+          </div>
+          <div>
+            <dt>Entrega</dt>
+            <dd>Codigo mantenible y listo para publicar</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="section" id="proyectos" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <p class="eyebrow">Trabajo seleccionado</p>
+          <h2 id="projects-title">Proyectos</h2>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-topline">
+              <span class="project-tag">SaaS</span>
+              <a href="https://github.com/pipeveiga/billify" aria-label="Abrir Billify en GitHub">GitHub</a>
+            </div>
+            <h3>Billify</h3>
+            <p>
+              Plataforma para ordenar procesos de facturacion y gestion operativa, pensada para reducir friccion en tareas repetidas.
+            </p>
+          </article>
+          <article class="project-card">
+            <div class="project-topline">
+              <span class="project-tag">Producto web</span>
+              <a href="https://github.com/pipeveiga/hinch.ar" aria-label="Abrir Hinch.ar en GitHub">GitHub</a>
+            </div>
+            <h3>Hinch.ar</h3>
+            <p>
+              Experiencia web alrededor de futbol y comunidad, con foco en una navegacion directa y contenido facil de explorar.
+            </p>
+          </article>
+          <article class="project-card">
+            <div class="project-topline">
+              <span class="project-tag">Hospitalidad</span>
+              <a href="https://github.com/pipeveiga/ABA" aria-label="Abrir ABA en GitHub">GitHub</a>
+            </div>
+            <h3>ABA</h3>
+            <p>
+              Sitio para una propuesta gastronomica, priorizando identidad visual, lectura rapida y una experiencia mobile cuidada.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section services" id="servicios" aria-labelledby="services-title">
+        <div class="section-heading">
+          <p class="eyebrow">Como puedo ayudar</p>
+          <h2 id="services-title">Servicios</h2>
+        </div>
+        <div class="service-list">
+          <article>
+            <span class="service-icon" aria-hidden="true">01</span>
+            <h3>Webs y portfolios</h3>
+            <p>Diseño e implementacion de sitios rapidos, responsivos y faciles de mantener.</p>
+          </article>
+          <article>
+            <span class="service-icon" aria-hidden="true">02</span>
+            <h3>MVPs</h3>
+            <p>Primeras versiones enfocadas en validar una idea sin cargar el proyecto de complejidad temprana.</p>
+          </article>
+          <article>
+            <span class="service-icon" aria-hidden="true">03</span>
+            <h3>Mejoras de producto</h3>
+            <p>Revision de experiencia, performance y flujos para que una app existente se sienta mejor.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact-band" id="contacto" aria-labelledby="contact-title">
+        <div>
+          <p class="eyebrow">Disponible para proyectos</p>
+          <h2 id="contact-title">Construyamos algo que se use de verdad.</h2>
+        </div>
+        <div class="contact-actions">
+          <a class="button primary" href="mailto:hola@pipeveiga.dev">Enviar email</a>
+          <a class="button secondary" href="https://github.com/pipeveiga">GitHub</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© <span id="year"></span> Pipe Veiga</span>
+      <a href="#inicio">Volver arriba</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
