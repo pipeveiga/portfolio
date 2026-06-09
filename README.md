@@ -4,10 +4,14 @@ Portfolio personal estatico, listo para publicar con GitHub Pages.
 
 ## Archivos principales
 
-- `index.html`: contenido y estructura.
+- `index.html`: contenido y estructura del portfolio.
+- `cv.html`: CV web imprimible o guardable como PDF desde el navegador.
 - `styles.css`: diseño responsive.
 - `script.js`: interacciones pequenas.
-- `assets/hero.png`: imagen principal del hero.
+
+## Capturas de proyectos
+
+La version actual no incluye capturas reales de proyectos. Cuando esten listas, conviene agregarlas como imagenes optimizadas en `assets/` y reemplazar los placeholders visuales de cada caso de estudio.
 
 ## Publicacion en GitHub Pages
 
