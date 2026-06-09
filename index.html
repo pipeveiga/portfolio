@@ -6,22 +6,19 @@
     <title>Felipe Veiga | Portfolio</title>
     <meta
       name="description"
-      content="Portfolio y CV de Felipe Veiga: producto digital, frontend, MVPs y experiencias web."
+      content="Portfolio y CV de Felipe Veiga: frontend, producto digital y experiencias web."
     />
     <meta property="og:title" content="Felipe Veiga | Portfolio" />
     <meta
       property="og:description"
-      content="Dise&ntilde;o y desarrollo productos digitales claros, rapidos y cuidados."
+      content="Frontend y producto digital con foco en claridad, detalle y entrega."
     />
     <meta property="og:type" content="website" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header" data-elevated="false">
-      <a class="brand" href="#inicio" aria-label="Ir al inicio">
-        <span class="brand-mark">FV</span>
-        <span>Felipe Veiga</span>
-      </a>
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">Felipe Veiga</a>
       <nav class="nav" aria-label="Principal">
         <a href="#proyectos">Proyectos</a>
         <a href="#perfil">Perfil</a>
@@ -32,157 +29,128 @@
 
     <main>
       <section class="hero" id="inicio" aria-labelledby="hero-title">
-        <div class="hero-stage" aria-hidden="true">
-          <div class="device device-main float-layer" data-speed="-0.18">
-            <div class="device-bar"></div>
-            <div class="device-grid">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-          <div class="device device-side float-layer" data-speed="0.12">
-            <div class="phone-notch"></div>
-            <div class="phone-lines"></div>
-          </div>
-          <div class="glass-panel float-layer" data-speed="-0.08"></div>
-        </div>
-
-        <div class="hero-content">
-          <p class="eyebrow">Portfolio & CV</p>
-          <h1 id="hero-title">Felipe Veiga</h1>
-          <p class="hero-copy">
-            Desarrollo interfaces y productos digitales con criterio de negocio, sensibilidad visual y foco en que cada flujo se sienta simple.
-          </p>
-          <div class="hero-actions" aria-label="Acciones principales">
-            <a class="button primary" href="cv.html">Ver CV</a>
-            <a class="button secondary" href="#proyectos">Ver proyectos</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section statement reveal" id="perfil" aria-label="Perfil profesional">
-        <p>
-          Soy un builder de producto: conecto dise&ntilde;o, frontend y ejecucion para llevar ideas desde un primer prototipo hasta una experiencia prolija, usable y presentable.
+        <p class="eyebrow">Frontend & producto digital</p>
+        <h1 id="hero-title"><span>Felipe</span> <span>Veiga</span></h1>
+        <p class="hero-copy">
+          Construyo interfaces limpias, rapidas y pensadas para vender una idea sin explicar de mas.
         </p>
+        <div class="hero-actions" aria-label="Acciones principales">
+          <a class="button primary" href="cv.html">Ver CV</a>
+          <a class="button secondary" href="#proyectos">Ver proyectos</a>
+        </div>
       </section>
 
-      <section class="section capabilities" aria-label="Fortalezas">
-        <article class="capability reveal">
+      <section class="manifest" id="perfil" aria-label="Perfil profesional">
+        <div class="manifest-inner">
+          <p class="reveal">
+            Producto, diseño y codigo en una misma direccion: claridad.
+          </p>
+          <p class="manifest-copy reveal">
+            Trabajo sobre experiencias web con una obsesion simple: que se vean bien, carguen rapido y se entiendan al primer uso.
+          </p>
+        </div>
+      </section>
+
+      <section class="section principles" aria-label="Fortalezas">
+        <article class="principle reveal">
           <span>01</span>
-          <h2>Frontend cuidado</h2>
-          <p>Interfaces responsivas, fluidas y mantenibles, con atencion al detalle visual y a la experiencia real de uso.</p>
+          <h2>Interfaz</h2>
+          <p>Layout, responsive, estados y detalles visuales con criterio de producto.</p>
         </article>
-        <article class="capability reveal">
+        <article class="principle reveal">
           <span>02</span>
-          <h2>Vision de producto</h2>
-          <p>Priorizo claridad, velocidad de iteracion y decisiones que ayudan a validar antes de sobreconstruir.</p>
+          <h2>Velocidad</h2>
+          <p>MVPs y mejoras pensadas para avanzar sin llenar el proyecto de complejidad.</p>
         </article>
-        <article class="capability reveal">
+        <article class="principle reveal">
           <span>03</span>
-          <h2>Entrega completa</h2>
-          <p>Pienso en la experiencia, pero tambien en publicar, documentar y dejar una base preparada para crecer.</p>
+          <h2>Entrega</h2>
+          <p>Codigo publicable, ordenado y facil de seguir para iterar despues.</p>
         </article>
       </section>
 
-      <section class="section projects" id="proyectos" aria-labelledby="projects-title">
+      <section class="projects" id="proyectos" aria-labelledby="projects-title">
         <div class="section-heading reveal">
           <p class="eyebrow">Trabajo seleccionado</p>
           <h2 id="projects-title">Proyectos</h2>
         </div>
 
-        <div class="project-list">
-          <article class="project-case reveal">
-            <a class="project-visual" href="https://github.com/pipeveiga/billify" aria-label="Abrir Billify en GitHub">
-              <div class="shot-shell billify-shell" aria-hidden="true">
-                <span></span><span></span><span></span><span></span>
-              </div>
-            </a>
-            <div class="project-copy">
-              <p class="project-kicker">SaaS / Operaciones</p>
-              <h3>Billify</h3>
-              <p>Producto para ordenar facturacion y tareas operativas. El valor esta en reducir friccion, acelerar acciones frecuentes y mantener una interfaz clara.</p>
-              <a href="https://github.com/pipeveiga/billify">Ver repositorio</a>
-            </div>
-          </article>
+        <article class="project-story reveal">
+          <a class="project-screen" href="https://github.com/pipeveiga/billify" aria-label="Abrir Billify en GitHub">
+            <span class="screen-label">Billify</span>
+          </a>
+          <div class="project-text">
+            <p class="project-kicker">SaaS / Operaciones</p>
+            <h3>Billify</h3>
+            <p>
+              Producto para ordenar facturacion y gestion operativa. El foco esta en reducir friccion en tareas repetidas y dar una experiencia clara.
+            </p>
+            <a href="https://github.com/pipeveiga/billify">Ver repositorio</a>
+          </div>
+        </article>
 
-          <article class="project-case reverse reveal">
-            <a class="project-visual" href="https://github.com/pipeveiga/hinch.ar" aria-label="Abrir Hinch.ar en GitHub">
-              <div class="shot-shell hinchar-shell" aria-hidden="true">
-                <span></span><span></span><span></span><span></span>
-              </div>
-            </a>
-            <div class="project-copy">
-              <p class="project-kicker">Comunidad / Web app</p>
-              <h3>Hinch.ar</h3>
-              <p>Experiencia digital alrededor de futbol y comunidad, pensada para lectura rapida, navegacion simple y contenido facil de explorar.</p>
-              <a href="https://github.com/pipeveiga/hinch.ar">Ver repositorio</a>
-            </div>
-          </article>
+        <article class="project-story reveal">
+          <a class="project-screen alt" href="https://github.com/pipeveiga/hinch.ar" aria-label="Abrir Hinch.ar en GitHub">
+            <span class="screen-label">Hinch.ar</span>
+          </a>
+          <div class="project-text">
+            <p class="project-kicker">Comunidad / Web app</p>
+            <h3>Hinch.ar</h3>
+            <p>
+              Experiencia web alrededor de futbol y comunidad, con navegacion directa y contenido facil de explorar.
+            </p>
+            <a href="https://github.com/pipeveiga/hinch.ar">Ver repositorio</a>
+          </div>
+        </article>
 
-          <article class="project-case reveal">
-            <a class="project-visual" href="https://github.com/pipeveiga/ABA" aria-label="Abrir ABA en GitHub">
-              <div class="shot-shell aba-shell" aria-hidden="true">
-                <span></span><span></span><span></span><span></span>
-              </div>
-            </a>
-            <div class="project-copy">
-              <p class="project-kicker">Hospitalidad / Sitio web</p>
-              <h3>ABA</h3>
-              <p>Sitio para una propuesta gastronomica, con foco en identidad, lectura mobile y una presentacion que transmite confianza desde el primer vistazo.</p>
-              <a href="https://github.com/pipeveiga/ABA">Ver repositorio</a>
-            </div>
+        <article class="project-story reveal">
+          <a class="project-screen warm" href="https://github.com/pipeveiga/ABA" aria-label="Abrir ABA en GitHub">
+            <span class="screen-label">ABA</span>
+          </a>
+          <div class="project-text">
+            <p class="project-kicker">Hospitalidad / Sitio web</p>
+            <h3>ABA</h3>
+            <p>
+              Sitio para una propuesta gastronomica, priorizando lectura mobile, identidad y una presentacion confiable.
+            </p>
+            <a href="https://github.com/pipeveiga/ABA">Ver repositorio</a>
+          </div>
+        </article>
+      </section>
+
+      <section class="cv-panel reveal" aria-labelledby="cv-title">
+        <p class="eyebrow">CV</p>
+        <h2 id="cv-title">Una pagina para entender rapido que hago y como trabajo.</h2>
+        <div class="cv-actions">
+          <a class="button primary" href="cv.html">Abrir CV</a>
+          <a class="button secondary" href="cv.html#print">Guardar como PDF</a>
+        </div>
+      </section>
+
+      <section class="services" aria-labelledby="services-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Servicios</p>
+          <h2 id="services-title">Lo que puedo construir</h2>
+        </div>
+        <div class="service-grid">
+          <article class="reveal">
+            <h3>Webs y portfolios</h3>
+            <p>Sitios rapidos, responsive y pensados para presentar una idea con calidad.</p>
+          </article>
+          <article class="reveal">
+            <h3>MVPs</h3>
+            <p>Primeras versiones para validar producto sin sobrecargar la base tecnica.</p>
+          </article>
+          <article class="reveal">
+            <h3>Mejoras de producto</h3>
+            <p>Revision de experiencia, estructura visual y flujos para que una app se sienta mejor.</p>
           </article>
         </div>
       </section>
 
-      <section class="cv-band reveal" aria-labelledby="cv-title">
-        <div>
-          <p class="eyebrow">Perfil profesional</p>
-          <h2 id="cv-title">Un CV pensado para leerse rapido.</h2>
-        </div>
-        <p>
-          Resumen de habilidades, proyectos, forma de trabajo y datos de contacto en una pagina limpia, lista para imprimir o guardar como PDF.
-        </p>
-        <a class="button primary" href="cv.html">Abrir CV</a>
-      </section>
-
-      <section class="section services" id="servicios" aria-labelledby="services-title">
-        <div class="section-heading sticky-heading reveal">
-          <p class="eyebrow">Como puedo ayudar</p>
-          <h2 id="services-title">Servicios</h2>
-        </div>
-        <div class="service-list">
-          <article class="reveal">
-            <span class="service-icon" aria-hidden="true">01</span>
-            <div>
-              <h3>Webs y portfolios</h3>
-              <p>Dise&ntilde;o e implementacion de sitios rapidos, responsivos y faciles de mantener.</p>
-            </div>
-          </article>
-          <article class="reveal">
-            <span class="service-icon" aria-hidden="true">02</span>
-            <div>
-              <h3>MVPs</h3>
-              <p>Primeras versiones enfocadas en validar una idea sin cargar el proyecto de complejidad temprana.</p>
-            </div>
-          </article>
-          <article class="reveal">
-            <span class="service-icon" aria-hidden="true">03</span>
-            <div>
-              <h3>Mejoras de producto</h3>
-              <p>Revision de experiencia, performance y flujos para que una app existente se sienta mejor.</p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="contact-band" id="contacto" aria-labelledby="contact-title">
-        <div>
-          <p class="eyebrow">Disponible para proyectos</p>
-          <h2 id="contact-title">Construyamos algo que se use de verdad.</h2>
-        </div>
+      <section class="contact" id="contacto" aria-labelledby="contact-title">
+        <p class="eyebrow">Contacto</p>
+        <h2 id="contact-title">Construyamos algo simple, solido y usable.</h2>
         <div class="contact-actions">
           <a class="button primary" href="mailto:hola@pipeveiga.dev">Enviar email</a>
           <a class="button secondary" href="https://github.com/pipeveiga">GitHub</a>
