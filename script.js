@@ -174,7 +174,10 @@ function setupCursor() {
 
   const dot = document.querySelector(".cursor-dot");
   const ring = document.querySelector(".cursor-ring");
-  if (!dot || !ring) return;
+  if (!dot || !ring) {
+    document.body.classList.add("no-custom-cursor");
+    return;
+  }
 
   let mx = window.innerWidth / 2;
   let my = window.innerHeight / 2;
