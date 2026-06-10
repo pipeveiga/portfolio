@@ -82,12 +82,34 @@ a {
 
 .hero {
   align-items: center;
+  background-image: url('assets/hero-bg.webp');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
   padding: 110px 22px 88px;
+  position: relative;
   text-align: center;
+}
+
+.hero::before {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .eyebrow {
