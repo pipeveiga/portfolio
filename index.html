@@ -19,18 +19,19 @@
   </head>
   <body>
     <header class="site-header" data-elevated="false">
-      <a class="brand" href="#inicio" aria-label="Ir al inicio">Felipe Veiga</a>
-      <nav class="nav" aria-label="Principal">
+      <nav class="glass-nav" aria-label="Principal">
+        <a class="brand" href="#inicio" aria-label="Ir al inicio">Felipe Veiga</a>
         <a href="#proyectos">Proyectos</a>
         <a href="#perfil">Perfil</a>
         <a href="cv.html">CV</a>
-        <a href="#contacto">Contacto</a>
+        <a class="nav-cta" href="#contacto">Contacto</a>
       </nav>
     </header>
 
     <main>
       <section class="hero" id="inicio" aria-labelledby="hero-title">
-        <p class="eyebrow">Full-Stack Software Engineer</p>
+        <div class="hero-bg" aria-hidden="true"></div>
+        <p class="eyebrow glass-chip"><span class="dot" aria-hidden="true"></span>Full-Stack Software Engineer</p>
         <h1 id="hero-title"><span>Felipe</span> <span>Veiga</span></h1>
         <p class="hero-copy">
           Desarrollo software de produccion de punta a punta: arquitectura, base de datos, frontend, deploy, seguridad y documentacion.
@@ -39,6 +40,11 @@
           <a class="button primary" href="assets/felipe-veiga-cv-es.pdf" download>Descargar CV</a>
           <a class="button secondary" href="#proyectos">Ver proyectos</a>
         </div>
+        <a class="scroll-hint" href="#perfil" aria-label="Seguir bajando">
+          <svg width="16" height="9" viewBox="0 0 18 10" fill="none" aria-hidden="true">
+            <path d="M1 1l8 8 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
       </section>
 
       <section class="manifest" id="perfil" aria-label="Perfil profesional">
@@ -53,17 +59,17 @@
       </section>
 
       <section class="section principles" aria-label="Fortalezas">
-        <article class="principle reveal">
+        <article class="principle glass-card card-glow reveal">
           <span>01</span>
           <h2>Full-stack</h2>
           <p>TypeScript, Python, React Native, Next.js, Supabase, PostgreSQL y APIs reales en produccion.</p>
         </article>
-        <article class="principle reveal">
+        <article class="principle glass-card card-glow reveal">
           <span>02</span>
           <h2>Producto</h2>
           <p>Diseño soluciones que nacen de problemas concretos: pedidos, facturacion, reservas, inventario y operaciones.</p>
         </article>
-        <article class="principle reveal">
+        <article class="principle glass-card card-glow reveal">
           <span>03</span>
           <h2>Produccion</h2>
           <p>Deploys, seguridad, documentacion, CI/CD, pagos, notificaciones push y auditorias sobre flujos criticos.</p>
@@ -81,11 +87,11 @@
             <img class="screen-image" src="assets/hinch-ar.png" alt="Captura de hinch.ar mostrando la landing del producto" loading="lazy" />
           </a>
           <div class="project-text">
-          <p class="project-kicker">React Native / Supabase / EAS Build</p>
-          <h3>hinch.ar</h3>
-          <p>
+            <p class="project-kicker"><span>React Native</span><span>Supabase</span><span>EAS Build</span></p>
+            <h3>hinch.ar</h3>
+            <p>
               App multiplataforma para carpooling en eventos masivos. Chat en tiempo real por reserva, push notifications, verificacion de identidad, confirmacion del conductor y rating de 5 criterios.
-          </p>
+            </p>
             <a href="https://hinch.ar" target="_blank" rel="noopener">Visitar hinch.ar</a>
           </div>
         </article>
@@ -95,7 +101,7 @@
             <img class="screen-image" src="assets/billify.png" alt="Captura de Billify mostrando la landing del SaaS de facturacion" loading="lazy" />
           </a>
           <div class="project-text">
-            <p class="project-kicker">Next.js / Stripe / PayPal / Facturapi</p>
+            <p class="project-kicker"><span>Next.js</span><span>Stripe</span><span>PayPal</span><span>Facturapi</span></p>
             <h3>Billify</h3>
             <p>
               SaaS de facturacion para Mexico con multi-moneda, PDFs, dashboard y pagina publica de pago. Incluye auditoria de seguridad, ownership validation, JWT Bearer auth y deploy automatico en Vercel.
@@ -109,7 +115,7 @@
             <img class="screen-image" src="assets/pivot.png" alt="Captura de pivot.net.ar mostrando la landing de la consultora" loading="lazy" />
           </a>
           <div class="project-text">
-            <p class="project-kicker">Landing institucional / Diseño web</p>
+            <p class="project-kicker"><span>Landing institucional</span><span>Diseño web</span></p>
             <h3>Pivot</h3>
             <p>
               Sitio corporativo para una consultora especializada en consultoria estrategica, transformacion digital y marketing. Identidad visual con bloques geometricos de color y secciones de quienes somos, servicios y contacto.
@@ -119,7 +125,7 @@
         </article>
       </section>
 
-      <section class="cv-panel reveal" aria-labelledby="cv-title">
+      <section class="cv-panel glass-card card-glow reveal" aria-labelledby="cv-title">
         <p class="eyebrow">CV</p>
         <h2 id="cv-title">Disponible en español e ingles.</h2>
         <div class="cv-actions">
@@ -135,15 +141,15 @@
           <h2 id="services-title">Lo que puedo construir</h2>
         </div>
         <div class="service-grid">
-          <article class="reveal">
+          <article class="glass-card card-glow reveal">
             <h3>Apps full-stack</h3>
             <p>Frontend, backend, base de datos, auth, storage, realtime, deploy y documentacion.</p>
           </article>
-          <article class="reveal">
+          <article class="glass-card card-glow reveal">
             <h3>Automatizaciones</h3>
             <p>Scripts y herramientas internas para reemplazar tareas manuales, sincronizar datos y reducir errores.</p>
           </article>
-          <article class="reveal">
+          <article class="glass-card card-glow reveal">
             <h3>Seguridad y deploy</h3>
             <p>Auditorias, ownership checks, JWT auth, CI/CD, Vercel, EAS Build y flujos listos para produccion.</p>
           </article>
@@ -152,7 +158,7 @@
 
       <section class="contact" id="contacto" aria-labelledby="contact-title">
         <p class="eyebrow">Contacto</p>
-        <h2 id="contact-title">Construyamos software que llegue a produccion.</h2>
+        <h2 id="contact-title" class="gradient-text">Construyamos software que llegue a produccion.</h2>
         <div class="contact-actions">
           <a class="button primary" href="mailto:fv.felipeveiga@gmail.com">Enviar email</a>
           <a class="button secondary" href="assets/felipe-veiga-cv-es.pdf" download>Descargar CV</a>
