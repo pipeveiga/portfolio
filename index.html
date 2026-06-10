@@ -18,6 +18,10 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="page-progress" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
+
     <header class="site-header" data-elevated="false">
       <nav class="glass-nav" aria-label="Principal">
         <a class="brand" href="#inicio" aria-label="Ir al inicio">Felipe Veiga</a>
@@ -31,14 +35,17 @@
     <main>
       <section class="hero" id="inicio" aria-labelledby="hero-title">
         <div class="hero-bg" aria-hidden="true"></div>
-        <p class="eyebrow glass-chip"><span class="dot" aria-hidden="true"></span>Full-Stack Software Engineer</p>
-        <h1 id="hero-title"><span>Felipe</span> <span>Veiga</span></h1>
+        <p class="eyebrow glass-chip"><span class="dot" aria-hidden="true"></span>Full-Stack Software Engineer · AI-Augmented</p>
+        <h1 id="hero-title" class="hero-title">
+          <span class="word">Felipe</span>
+          <span class="word">Veiga</span>
+        </h1>
         <p class="hero-copy">
           Desarrollo software de produccion de punta a punta: arquitectura, base de datos, frontend, deploy, seguridad y documentacion.
         </p>
         <div class="hero-actions" aria-label="Acciones principales">
-          <a class="button primary" href="assets/felipe-veiga-cv-es.pdf" download>Descargar CV</a>
-          <a class="button secondary" href="#proyectos">Ver proyectos</a>
+          <a class="button primary" data-magnetic href="assets/felipe-veiga-cv-es.pdf" download>Descargar CV</a>
+          <a class="button secondary" data-magnetic href="#proyectos">Ver proyectos</a>
         </div>
         <a class="scroll-hint" href="#perfil" aria-label="Seguir bajando">
           <svg width="16" height="9" viewBox="0 0 18 10" fill="none" aria-hidden="true">
@@ -46,6 +53,43 @@
           </svg>
         </a>
       </section>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>TypeScript</span><span aria-hidden="true">●</span>
+          <span>React</span><span aria-hidden="true">●</span>
+          <span>Next.js</span><span aria-hidden="true">●</span>
+          <span>React Native</span><span aria-hidden="true">●</span>
+          <span>Supabase</span><span aria-hidden="true">●</span>
+          <span>PostgreSQL</span><span aria-hidden="true">●</span>
+          <span>Stripe</span><span aria-hidden="true">●</span>
+          <span>Python</span><span aria-hidden="true">●</span>
+          <span>LLMs · Claude · GPT</span><span aria-hidden="true">●</span>
+          <span>Tailwind</span><span aria-hidden="true">●</span>
+          <span>Vercel</span><span aria-hidden="true">●</span>
+          <span>EAS Build</span><span aria-hidden="true">●</span>
+          <span>Edge Functions</span><span aria-hidden="true">●</span>
+          <span>Realtime</span><span aria-hidden="true">●</span>
+          <span>JWT Auth</span><span aria-hidden="true">●</span>
+          <span>CI/CD</span><span aria-hidden="true">●</span>
+          <span>TypeScript</span><span aria-hidden="true">●</span>
+          <span>React</span><span aria-hidden="true">●</span>
+          <span>Next.js</span><span aria-hidden="true">●</span>
+          <span>React Native</span><span aria-hidden="true">●</span>
+          <span>Supabase</span><span aria-hidden="true">●</span>
+          <span>PostgreSQL</span><span aria-hidden="true">●</span>
+          <span>Stripe</span><span aria-hidden="true">●</span>
+          <span>Python</span><span aria-hidden="true">●</span>
+          <span>LLMs · Claude · GPT</span><span aria-hidden="true">●</span>
+          <span>Tailwind</span><span aria-hidden="true">●</span>
+          <span>Vercel</span><span aria-hidden="true">●</span>
+          <span>EAS Build</span><span aria-hidden="true">●</span>
+          <span>Edge Functions</span><span aria-hidden="true">●</span>
+          <span>Realtime</span><span aria-hidden="true">●</span>
+          <span>JWT Auth</span><span aria-hidden="true">●</span>
+          <span>CI/CD</span><span aria-hidden="true">●</span>
+        </div>
+      </div>
 
       <section class="manifest" id="perfil" aria-label="Perfil profesional">
         <div class="manifest-inner">
@@ -160,9 +204,9 @@
         <p class="eyebrow">Contacto</p>
         <h2 id="contact-title" class="gradient-text">Construyamos software que llegue a produccion.</h2>
         <div class="contact-actions">
-          <a class="button primary" href="mailto:felipe@veiga.ar">Enviar email</a>
-          <a class="button secondary" href="https://wa.me/5493416371115" target="_blank" rel="noopener">WhatsApp</a>
-          <a class="button secondary" href="assets/felipe-veiga-cv-es.pdf" download>Descargar CV</a>
+          <a class="button primary" data-magnetic href="mailto:felipe@veiga.ar">Enviar email</a>
+          <a class="button secondary" data-magnetic href="https://wa.me/5493416371115" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="button secondary" data-magnetic href="assets/felipe-veiga-cv-es.pdf" download>Descargar CV</a>
         </div>
       </section>
     </main>
