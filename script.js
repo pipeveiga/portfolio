@@ -276,6 +276,11 @@ updateHeader();
 
 window.addEventListener("scroll", updateHeader, { passive: true });
 
+const printButton = document.querySelector(".print-button");
+if (printButton) {
+  printButton.addEventListener("click", () => window.print());
+}
+
 if (document.body.classList.contains("cv-page") && window.location.hash === "#print") {
   window.addEventListener("load", () => window.print());
 }
