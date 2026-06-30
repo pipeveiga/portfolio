@@ -1,17 +1,30 @@
 // Webhook de WhatsApp Cloud API.
 // - GET  -> verificacion del webhook por parte de Meta (hub.challenge).
-// - POST -> mensaje entrante: se lo paso a Claude y devuelvo la respuesta por WhatsApp.
+// - POST -> mensaje entrante (firmado por Meta): se valida la firma, se pasa a
+//           Claude y se devuelve la respuesta por WhatsApp.
 //
 // Variables de entorno requeridas (configurar en Vercel, nunca hardcodear):
 //   VERIFY_TOKEN       token arbitrario que tambien cargas en el panel de Meta
+//   APP_SECRET         "App Secret" de la app de Meta (firma X-Hub-Signature-256)
 //   ANTHROPIC_API_KEY  API key de Anthropic
 //   PHONE_NUMBER_ID    ID del numero de telefono de WhatsApp Business
 //   WHATSAPP_TOKEN     token de acceso de la Graph API
 //
 // Runtime: Node.js (fetch nativo, Node 18+).
 
+import crypto from "node:crypto";
+
+// Desactivamos el body parser de Vercel: necesitamos los bytes crudos del body
+// para poder validar la firma HMAC que manda Meta. Parsear y re-serializar
+// cambiaria los bytes y la firma nunca coincidiria.
+export const config = {
+  api: { bodyParser: false },
+};
+
 const GRAPH_API_VERSION = "v21.0";
 const ANTHROPIC_MODEL = "claude-sonnet-4-6";
+const MAX_BODY_BYTES = 1024 * 1024; // 1 MB: los webhooks de WhatsApp son chicos.
+const MAX_USER_CHARS = 4096; // limite de un mensaje de texto de WhatsApp.
 
 const SYSTEM_PROMPT =
   "Sos el asistente de atencion al cliente de mi negocio. Respondes por WhatsApp, " +
@@ -34,13 +47,14 @@ export default async function handler(req, res) {
 
 // --- GET: verificacion del webhook (Meta) ---
 function handleVerification(req, res) {
-  const mode = req.query["hub.mode"];
-  const token = req.query["hub.verify_token"];
-  const challenge = req.query["hub.challenge"];
+  const params = new URL(req.url, "http://localhost").searchParams;
+  const mode = params.get("hub.mode");
+  const token = params.get("hub.verify_token");
+  const challenge = params.get("hub.challenge");
 
-  if (mode === "subscribe" && token === process.env.VERIFY_TOKEN) {
+  if (mode === "subscribe" && safeEqual(token, process.env.VERIFY_TOKEN)) {
     res.setHeader("Content-Type", "text/plain");
-    return res.status(200).send(challenge);
+    return res.status(200).send(challenge ?? "");
   }
 
   return res.status(403).send("Forbidden");
@@ -48,23 +62,84 @@ function handleVerification(req, res) {
 
 // --- POST: mensaje entrante ---
 async function handleIncomingMessage(req, res) {
+  let rawBody;
   try {
-    const message = extractTextMessage(req.body);
+    rawBody = await readRawBody(req);
+  } catch {
+    return res.status(413).send("Payload Too Large");
+  }
+
+  // Puerta de entrada: solo procesamos requests autenticamente firmados por Meta.
+  const signature = req.headers["x-hub-signature-256"];
+  if (!verifySignature(rawBody, signature, process.env.APP_SECRET)) {
+    return res.status(401).send("Unauthorized");
+  }
+
+  try {
+    const body = JSON.parse(rawBody.toString("utf8"));
+    const message = extractTextMessage(body);
 
     // Sin mensaje de texto (status update, reaccion, audio, etc.): cortar.
-    if (!message) {
-      return res.status(200).end();
+    if (message) {
+      const reply = await askClaude(message.text);
+      await sendWhatsAppMessage(message.from, reply);
     }
-
-    const reply = await askClaude(message.text);
-    await sendWhatsAppMessage(message.from, reply);
   } catch (err) {
-    // Logueamos pero igual devolvemos 200: no queremos que Meta reintente.
-    console.error("Error procesando el webhook de WhatsApp:", err);
+    // Logueamos pero igual devolvemos 200: el request era legitimo (firma valida),
+    // no queremos que Meta reintente indefinidamente.
+    console.error("Error procesando el webhook de WhatsApp:", err?.message || err);
   }
 
   return res.status(200).end();
 }
+
+// --- Helpers de seguridad ---
+
+// Lee el body como Buffer crudo, con tope de tamano para evitar abuso de memoria.
+async function readRawBody(req) {
+  const chunks = [];
+  let size = 0;
+  for await (const chunk of req) {
+    size += chunk.length;
+    if (size > MAX_BODY_BYTES) {
+      throw new Error("payload too large");
+    }
+    chunks.push(chunk);
+  }
+  return Buffer.concat(chunks);
+}
+
+// Verifica X-Hub-Signature-256 = "sha256=" + HMAC_SHA256(APP_SECRET, rawBody).
+// Comparacion en tiempo constante para no filtrar la firma byte a byte.
+function verifySignature(rawBody, signatureHeader, appSecret) {
+  if (!appSecret || typeof signatureHeader !== "string") {
+    return false;
+  }
+
+  const expected =
+    "sha256=" +
+    crypto.createHmac("sha256", appSecret).update(rawBody).digest("hex");
+
+  const received = Buffer.from(signatureHeader);
+  const computed = Buffer.from(expected);
+
+  return (
+    received.length === computed.length &&
+    crypto.timingSafeEqual(received, computed)
+  );
+}
+
+// Comparacion de strings en tiempo constante (para el verify_token).
+function safeEqual(a, b) {
+  if (typeof a !== "string" || typeof b !== "string") {
+    return false;
+  }
+  const ab = Buffer.from(a);
+  const bb = Buffer.from(b);
+  return ab.length === bb.length && crypto.timingSafeEqual(ab, bb);
+}
+
+// --- Logica de mensajes ---
 
 // Devuelve { from, text } si hay un mensaje de texto, o null en cualquier otro caso.
 function extractTextMessage(body) {
@@ -74,7 +149,10 @@ function extractTextMessage(body) {
     return null;
   }
 
-  return { from: message.from, text: message.text.body };
+  return {
+    from: message.from,
+    text: String(message.text.body).slice(0, MAX_USER_CHARS),
+  };
 }
 
 // Manda el texto del usuario a la API de Anthropic y devuelve la respuesta de Claude.
