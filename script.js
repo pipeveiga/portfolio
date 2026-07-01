@@ -166,73 +166,6 @@ function setupProgressBar() {
   update();
 }
 
-function setupCursor() {
-  if (!finePointer || prefersReducedMotion) {
-    document.body.classList.add("no-custom-cursor");
-    return;
-  }
-
-  const dot = document.querySelector(".cursor-dot");
-  const ring = document.querySelector(".cursor-ring");
-  if (!dot || !ring) {
-    document.body.classList.add("no-custom-cursor");
-    return;
-  }
-
-  let mx = window.innerWidth / 2;
-  let my = window.innerHeight / 2;
-  let rx = mx;
-  let ry = my;
-
-  window.addEventListener(
-    "mousemove",
-    (event) => {
-      mx = event.clientX;
-      my = event.clientY;
-      dot.style.transform = `translate3d(${mx}px, ${my}px, 0) translate(-50%, -50%)`;
-    },
-    { passive: true },
-  );
-
-  function loop() {
-    rx += (mx - rx) * 0.2;
-    ry += (my - ry) * 0.2;
-    ring.style.transform = `translate3d(${rx.toFixed(2)}px, ${ry.toFixed(
-      2,
-    )}px, 0) translate(-50%, -50%)`;
-    requestAnimationFrame(loop);
-  }
-  loop();
-
-  document.addEventListener("mouseleave", () =>
-    document.body.classList.add("cursor-hidden"),
-  );
-  document.addEventListener("mouseenter", () =>
-    document.body.classList.remove("cursor-hidden"),
-  );
-
-  const hoverTargets = document.querySelectorAll(
-    "a, button, .project-screen, .glass-card, .scroll-hint, [data-cursor='hover']",
-  );
-  hoverTargets.forEach((el) => {
-    el.addEventListener("mouseenter", () => ring.classList.add("is-hover"));
-    el.addEventListener("mouseleave", () => ring.classList.remove("is-hover"));
-  });
-
-  const tightTargets = document.querySelectorAll(
-    "p, h1, h2, h3, span:not(.dot), li, label, input, textarea",
-  );
-  tightTargets.forEach((el) => {
-    el.addEventListener("mouseenter", () => {
-      if (!ring.classList.contains("is-hover")) ring.classList.add("is-tight");
-    });
-    el.addEventListener("mouseleave", () => ring.classList.remove("is-tight"));
-  });
-
-  document.addEventListener("mousedown", () => ring.classList.add("is-tight"));
-  document.addEventListener("mouseup", () => ring.classList.remove("is-tight"));
-}
-
 function setupMagnetic() {
   if (!finePointer || prefersReducedMotion) return;
   const strength = 0.28;
@@ -270,7 +203,6 @@ setupTilt();
 setupParallax();
 setupActiveNav();
 setupProgressBar();
-setupCursor();
 setupMagnetic();
 updateHeader();
 
